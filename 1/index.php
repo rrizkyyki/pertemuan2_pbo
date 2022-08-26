@@ -1,10 +1,12 @@
 <?php
+
 include("config.php");
 include("pegawai.php");
 $pegawai = new pegawai;
 $connection = new config;
 $allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai");
 // var_dump($allPegawai);die;
+
 ?>
 
 <!DOCTYPE html>
