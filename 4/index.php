@@ -4,7 +4,7 @@ include("../1/config.php");
 include("../1/pegawai.php");
 $pegawai = new pegawai;
 $connection = new config;
-$allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai WHERE jns_kel='L'");
+$allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai WHERE status='B'");
 
 ?>
 

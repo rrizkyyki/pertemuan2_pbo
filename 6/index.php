@@ -4,7 +4,7 @@ include("../1/config.php");
 include("../1/pegawai.php");
 $pegawai = new pegawai;
 $connection = new config;
-$allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai WHERE jns_kel='L'");
+$allPegawai = $pegawai->query($connection->conn,"SELECT *, (YEAR(CURDATE())-YEAR(tgl_lahir)) AS umur FROM pegawai WHERE (YEAR(CURDATE())-YEAR(tgl_lahir)) BETWEEN 31 AND 45");
 
 ?>
 
@@ -56,6 +56,7 @@ $allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai WHERE jns
                 <th>Tanggal Lahir</th>
                 <th>Status</th>
                 <th>Mulai Kerja</th>
+                <th>Umur</th>
             </tr>
         </thead>
         <tbody>
@@ -69,6 +70,7 @@ $allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai WHERE jns
                     echo "<td>".$pegawai['tgl_lahir']."</td>";
                     echo "<td>".$pegawai['status']."</td>";
                     echo "<td>".$pegawai['mulai_kerja']."</td>";
+                    echo "<td>".$pegawai['umur']."</td>";
 
                     echo "<tr>";
                 }

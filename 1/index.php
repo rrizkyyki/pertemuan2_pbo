@@ -77,5 +77,7 @@ $allPegawai = $pegawai->query($connection->conn,"SELECT * FROM pegawai");
         </tbody>
     </table>
     </div>
+    <br>
+    <a href="../index.php">Kembali</a>
 </body>
 </html>
